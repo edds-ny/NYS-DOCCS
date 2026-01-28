@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYS DOCCS Inmate Lookup by DIN | 2026 Comprehensive Guide</title>
+    <meta name="description" content="Master the NYS DOCCS Inmate Lookup system using DIN numbers. A strategic guide to inmate identification, data architecture, and correctional records in 2026.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4', // Changed to Green/Slate theme for Corrections/Legal feel
+                            100: '#dcfce7',
+                            500: '#16a34a',
+                            600: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "headline": "NYS DOCCS Inmate Lookup by DIN Number: The Definitive Guide to Inmate Identification",
+          "description": "Master the NYS DOCCS Inmate Lookup system using DIN numbers. A strategic guide to inmate identification, data architecture, and correctional records in 2026.",
+          "author": {
+            "@type": "Person",
+            "name": "Legal Data Analyst"
+          },
+          "datePublished": "2026-02-15",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://yourwebsite.com/nys-doccs-inmate-lookup-guide"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is a DIN Number?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A Department Identification Number (DIN) is a unique alphanumeric identifier assigned to every inmate admitted to the New York State DOCCS system. It serves as the primary key for tracking criminal history, facility transfers, and release dates."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I search for an inmate without a DIN?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, you can search by name and birth year, but it is less accurate. Common names may yield multiple results, whereas a DIN search guarantees a precise match to the specific offender record."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        /* Custom Styles for better reading experience */
+        body { background-color: #f8fafc; }
+        .prose-custom p { margin-bottom: 1.5rem; line-height: 1.8; color: #334155; font-size: 1.125rem; }
+        .prose-custom h2 { font-size: 1.875rem; font-weight: 700; color: #0f172a; margin-top: 3rem; margin-bottom: 1.5rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
+        .prose-custom h3 { font-size: 1.5rem; font-weight: 600; color: #1e293b; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose-custom ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; }
+        .prose-custom li { margin-bottom: 0.5rem; color: #334155; }
+        
+        /* Sticky TOC Active State */
+        .toc-link.active { color: #15803d; border-left: 3px solid #15803d; background-color: #f0fdf4; font-weight: 600; }
+        
+        /* FAQ Animation */
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .faq-item.active .faq-answer { max-height: 500px; transition: max-height 0.5s ease-in; }
+        .faq-item.active .faq-icon { transform: rotate(180deg); }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <i class="fa-solid fa-gavel text-brand-600 text-2xl"></i>
+                    <span class="font-bold text-xl text-slate-800">Corrections<span class="text-brand-600">Data</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#intro" class="text-gray-600 hover:text-brand-600 px-3 py-2 rounded-md text-sm font-medium">Overview</a>
+                    <a href="#din-explained" class="text-gray-600 hover:text-brand-600 px-3 py-2 rounded-md text-sm font-medium">The DIN System</a>
+                    <a href="#applications" class="text-gray-600 hover:text-brand-600 px-3 py-2 rounded-md text-sm font-medium">Applications</a>
+                    <a href="#faq" class="bg-brand-600 text-white hover:bg-brand-800 px-4 py-2 rounded-md text-sm font-medium transition">View FAQ</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header / Hero -->
+    <header id="intro" class="bg-slate-900 text-white py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-brand-500 uppercase rounded-full bg-brand-900 bg-opacity-50">
+                2026 Lookup Protocol
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+                NYS DOCCS Inmate Lookup by DIN Number: <br/>
+                <span class="text-brand-400">The Definitive Guide to Inmate Identification</span>
+            </h1>
+            <p class="text-xl text-slate-300 max-w-2xl mx-auto">
+                Explore the architecture of identification, data integrity, and the strategic retrieval of correctional records in the New York State system.
+            </p>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="lg:grid lg:grid-cols-12 lg:gap-12">
+            
+            <!-- Sidebar / Table of Contents -->
+            <aside class="hidden lg:block lg:col-span-3">
+                <div class="sticky top-24 overflow-y-auto">
+                    <h5 class="text-slate-900 font-bold mb-4 uppercase text-sm tracking-wide">Table of Contents</h5>
+                    <nav class="space-y-1" id="toc">
+                        <a href="#what-is-doccs" class="toc-link block border-l-2 border-transparent pl-4 py-2 text-sm text-gray-600 hover:border-brand-600 hover:text-brand-600 transition">What is DOCCS?</a>
+                        <a href="#din-explained" class="toc-link block border-l-2 border-transparent pl-4 py-2 text-sm text-gray-600 hover:border-brand-600 hover:text-brand-600 transition">Understanding DIN</a>
+                        <a href="#architecture" class="toc-link block border-l-2 border-transparent pl-4 py-2 text-sm text-gray-600 hover:border-brand-600 hover:text-brand-600 transition">Lookup Architecture</a>
+                        <a href="#comparative" class="toc-link block border-l-2 border-transparent pl-4 py-2 text-sm text-gray-600 hover:border-brand-600 hover:text-brand-600 transition">Comparative Systems</a>
+                        <a href="#faq" class="toc-link block border-l-2 border-transparent pl-4 py-2 text-sm text-gray-600 hover:border-brand-600 hover:text-brand-600 transition">FAQ</a>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="lg:col-span-9 prose-custom font-sans">
+                
+                <!-- Introduction -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 mb-8">
+                    <p class="lead text-xl text-slate-700 font-serif italic mb-6">
+                        In the complex ecosystem of criminal justice, the precision of data is not merely a convenience—it is a legal necessity.
+                    </p>
+                    <p>
+                        As state correctional facilities modernize their digital infrastructure, the <strong>NYS DOCCS Inmate Lookup</strong> has evolved into a sophisticated portal for transparency and public safety. At the heart of this system lies the <strong>DIN (Department Identification Number)</strong>, a unique alphanumeric string that eliminates the ambiguity of name-based searches.
+                    </p>
+                    <p>
+                        Whether for legal professionals cross-referencing <a href="http://nyscefs.us" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:underline">electronic court filings</a> or families tracking the status of incarcerated individuals, understanding the mechanics of the DIN lookup is essential for accurate information retrieval in 2026.
+                    </p>
+                </div>
+
+                <!-- Section 1: What is DOCCS -->
+                <section id="what-is-doccs" class="scroll-mt-24">
+                    <h2>What is the NYS DOCCS?</h2>
+                    <h3>Definition and Mandate</h3>
+                    <p>
+                        The <a href="https://en.wikipedia.org/wiki/New_York_State_Department_of_Corrections_and_Community_Supervision" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:underline">New York State Department of Corrections and Community Supervision (DOCCS)</a> is the government agency responsible for the care, custody, and treatment of individuals sentenced to state prison. It manages a vast dataset of offender information, which is made accessible to the public through its online lookup tools.
+                    </p>
+                    <p>
+                        This system does not operate in a vacuum. It often interfaces with broader judicial data, including <a href="http://ecourtsnyc.us" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:underline">New York City specific case data</a>, ensuring that records reflect the most current legal standing of an inmate, from sentencing to parole.
+                    </p>
+                </section>
+
+                <!-- Section 2: The DIN Explained -->
+                <section id="din-explained" class="scroll-mt-24">
+                    <h2>Understanding the DIN (Department Identification Number)</h2>
+                    <p>
+                        The DIN is the "primary key" of the NYS correctional database. Unlike names, which can be duplicated or misspelled, the DIN provides a 100% unique identifier for every individual admitted to the system.
+                    </p>
+                    
+                    <div class="grid md:grid-cols-2 gap-4 my-6">
+                        <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-brand-500">
+                            <strong class="block text-slate-900">Format Logic</strong>
+                            <span class="text-sm text-slate-600">Typically formatted as Year-Letter-Number (e.g., 26A1234), indicating the year of admission.</span>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-brand-500">
+                            <strong class="block text-slate-900">Precision</strong>
+                            <span class="text-sm text-slate-600">Eliminates false positives common in generic <a href="http://webcrimes.us" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:underline">criminal history verification</a> searches.</span>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-brand-500">
+                            <strong class="block text-slate-900">Permanence</strong>
+                            <span class="text-sm text-slate-600">The DIN remains attached to the offender's record indefinitely, even after release.</span>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-brand-500">
+                            <strong class="block text-slate-900">Interoperability</strong>
+                            <span class="text-sm text-slate-600">Used to synchronize data across systems, similar to how <a href="http://oscn.online/" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:underline">judicial record access</a> systems utilize case IDs.</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 3: Architecture -->
+                <section id="architecture" class="scroll-mt-24">
+                    <h2>Lookup Architecture & Data Integrity</h2>
+                    <p>
+                        The architecture behind the lookup tool is built on high-availability SQL databases that replicate data from facility management systems.
+                    </p>
+                    
+                    <div class="space-y-6 mt-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-10 w-10 rounded-full bg-brand-100 text-brand-600 font-bold">1</div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-slate-900">Query Processing</h4>
+                                <p class="text-sm mt-1">When a DIN is entered, the system bypasses phonetic algorithms used for name searches, directly querying the indexed ID field for sub-millisecond results.</p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-10 w-10 rounded-full bg-brand-100 text-brand-600 font-bold">2</div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-slate-900">Cross-Referencing</h4>
+                                <p class="text-sm mt-1">Advanced systems may cross-reference the DIN with external databases to verify outstanding warrants or <a href="http://odcr.us" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:underline">offender data repositories</a> in other jurisdictions.</p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-10 w-10 rounded-full bg-brand-100 text-brand-600 font-bold">3</div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-slate-900">Status Updates</h4>
+                                <p class="text-sm mt-1">The system provides real-time status (In Custody, Released, Absconded), crucial for victim notification services.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 4: Comparative Systems -->
+                <section id="comparative" class="scroll-mt-24">
+                    <h2>Strategic Applications: Comparative Systems</h2>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition">
+                            <div class="text-brand-600 text-3xl mb-4"><i class="fa-solid fa-map-location-dot"></i></div>
+                            <h3 class="mt-0 text-xl text-slate-900">Cross-State Analysis</h3>
+                            <p class="text-sm">New York's DIN system is often compared to other robust state systems. For example, researchers might analyze <a href="http://tdcjinmatesearch.us" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:underline">cross-state corrections data</a> from Texas to study recidivism rates or transfer protocols.</p>
+                            <p class="text-sm font-semibold mt-4 text-brand-600">Impact:</p>
+                            <p class="text-sm">Standardized IDs allow for better interstate cooperation and data sharing.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition">
+                            <div class="text-brand-600 text-3xl mb-4"><i class="fa-solid fa-network-wired"></i></div>
+                            <h3 class="mt-0 text-xl text-slate-900">Judicial Integration</h3>
+                            <p class="text-sm">Modern corrections data is increasingly linked with court data. Just as Arkansas leverages <a href="http://arkansascourtconect.us/" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:underline">digital court connectivity</a> to streamline case processing, NYS integrates DINs into the lifecycle of a legal case.</p>
+                            <p class="text-sm font-semibold mt-4 text-brand-600">Impact:</p>
+                            <p class="text-sm">Ensures that the "digital thread" of an offender's record remains unbroken from courtroom to cell.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 5: FAQ -->
+                <section id="faq" class="scroll-mt-24 mt-12 mb-12">
+                    <h2 class="border-none mb-8">Frequently Asked Questions</h2>
+                    <div class="space-y-4">
+                        
+                        <!-- FAQ Item 1 -->
+                        <div class="faq-item border border-gray-200 rounded-lg bg-white overflow-hidden">
+                            <button class="w-full text-left p-5 flex justify-between items-center focus:outline-none hover:bg-gray-50 transition">
+                                <span class="font-bold text-slate-800">What is a DIN Number?</span>
+                                <i class="fa-solid fa-chevron-down text-gray-400 faq-icon transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer bg-gray-50 px-5">
+                                <p class="pb-5 pt-2 text-sm text-gray-600">
+                                    A Department Identification Number (DIN) is a unique alphanumeric identifier assigned to every inmate admitted to the New York State DOCCS system. It serves as the primary key for tracking criminal history, facility transfers, and release dates.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 2 -->
+                        <div class="faq-item border border-gray-200 rounded-lg bg-white overflow-hidden">
+                            <button class="w-full text-left p-5 flex justify-between items-center focus:outline-none hover:bg-gray-50 transition">
+                                <span class="font-bold text-slate-800">Can I search without a DIN?</span>
+                                <i class="fa-solid fa-chevron-down text-gray-400 faq-icon transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer bg-gray-50 px-5">
+                                <p class="pb-5 pt-2 text-sm text-gray-600">
+                                    Yes, the NYS DOCCS lookup tool allows for searches by name and birth year. However, these are less accurate than using a DIN. For comprehensive background checks, professionals may also consult resources like <a href="http://webcrimes.us" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:underline">webcrimes.us</a> for broader verification.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 3 -->
+                        <div class="faq-item border border-gray-200 rounded-lg bg-white overflow-hidden">
+                            <button class="w-full text-left p-5 flex justify-between items-center focus:outline-none hover:bg-gray-50 transition">
+                                <span class="font-bold text-slate-800">How often is the data updated?</span>
+                                <i class="fa-solid fa-chevron-down text-gray-400 faq-icon transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer bg-gray-50 px-5">
+                                <p class="pb-5 pt-2 text-sm text-gray-600">
+                                    The NYS DOCCS database is updated regularly, typically every 24 hours. However, for critical legal filings, users should verify data against official court records via platforms like <a href="http://nyscefs.us" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:underline">NYSCEFS</a> to ensure no lag in status reporting.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <span class="font-bold text-white text-lg">NYS Lookup Guide</span>
+                <p class="text-sm mt-1">© 2026 Correctional Data Resources. All rights reserved.</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // 1. FAQ Accordion Logic
+        document.querySelectorAll('.faq-item button').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all others
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                });
+
+                // Toggle current
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // 2. Table of Contents Highlighter
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -60% 0px', // Trigger when section is near top
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Remove active from all links
+                    document.querySelectorAll('.toc-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    
+                    // Add active to current link
+                    const id = entry.target.getAttribute('id');
+                    const activeLink = document.querySelector(`.toc-link[href="#${id}"]`);
+                    if (activeLink) {
+                        activeLink.classList.add('active');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections that are linked in TOC
+        document.querySelectorAll('section[id], header[id]').forEach((section) => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
